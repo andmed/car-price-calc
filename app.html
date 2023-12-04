@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Import Calculator</title>
+  <link rel="stylesheet" type="text/css" href="./style.css">
+  
+  <script type="text/json" src="./data.json"></script>
+  <script type="text/javascript" src="./scripts.js"></script>
+</head>
+<body>
+
+  <h1>Car Import Calculator</h1>
+
+  <div class="container">
+    <div class="row">
+      <div class="field-group">
+        <label for="carPrice">Car Price (JPY): </label>
+        <input type="number" id="carPrice" placeholder="Enter car price">
+      </div>
+      <div class="field-group">
+        <label for="auctionDropdown">Auction: </label>
+        <select id="auctionDropdown"></select>
+      </div>
+    </div>
+
+    <div class="field-group">
+      <label for="deliveryPrice">Delivery Price (JPY): </label>
+      <input type="number" id="deliveryPrice" placeholder="Enter delivery price">
+    </div>
+
+    <div class="field-group">
+      <label>Import Duty + VAT: </label>
+      <span id="dutyAndVat">0</span>
+    </div>
+
+    <div class="field-group">
+      <label>Port Commision + SVA + MOT + Registration + Numbers + Documents: </label>
+      <span id="otherExpenditure">0</span>
+    </div>
+
+    <div class="field-group">
+      <label>Total Price: </label>
+      <span id="totalPrice">0</span>
+    </div>
+  </div>
+
+  <div class="settings-icon" onclick="openSettingsModal()">⚙️</div>
+
+  <div id="settingsModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeSettingsModal()">&times;</span>
+      <label for="apiKey">ExchangeRate-API Key:</label>
+      <input type="text" id="apiKey" placeholder="Enter API Key">
+      <!-- Tip for obtaining a new API key -->
+      <p class="tip">Need a new API key? Get one <a href="https://www.exchangerate-api.com/" target="_blank">here</a>.</p>
+      <button onclick="saveApiKey()">Save</button>
+    </div>
+  </div>
+
+</body>
+</html>
